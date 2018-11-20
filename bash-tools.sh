@@ -9,6 +9,12 @@ alias prettyjson='python -m json.tool'
 alias cls='printf "\033c"'
 alias gitlog='git log --pretty=oneline --abbrev-commit'
 
+# ls aliases
+alias la='ls -lAh'
+alias sl='ls'
+alias ll='ls -lh'
+alias l='ls -lah'
+
 bashtoolsfname="bash-tools.sh"
 envtooldir="${devdir}/bash-tools/"
 bashtoolspath="${envtooldir}${bashtoolsfname}"
