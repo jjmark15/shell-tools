@@ -3,7 +3,7 @@ alias foo='echo "snazziness epitomised"'
 alias cdev='cd ${devdir}'
 alias emptyf='cat /dev/null > '
 alias shredq='shred -uz'
-alias quick_upgrade='sudo apt update && sudo apt -y full-upgrade && sudo apt autoremove -y'
+alias quick_upgrade='sudo apt update && sudo apt -y full-upgrade && sudo apt autoremove -y && sudo snap refresh'
 
 alias prettyjson='python -m json.tool'
 alias cls='printf "\033c"'
