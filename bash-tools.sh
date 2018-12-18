@@ -33,7 +33,7 @@ update_env_tools() {
   else
     echo "Update failed"
   fi
-  cd -
+  cd - > /dev/null
   source $bashtoolspath
 }
 
