@@ -19,7 +19,6 @@ alias l='ls -lah'
 bashtoolsfname="bash-tools.sh"
 envtooldir="${devdir}/bash-tools/"
 bashtoolspath="${envtooldir}${bashtoolsfname}"
-# alias updateenvtools='git -C ${envtooldir} pull && source ${bashtoolspath}'
 
 LS_COLORS="$LS_COLORS:ow=01;34"
 export LS_COLORS
@@ -35,6 +34,7 @@ update_env_tools() {
     echo "Update failed"
   fi
   cd -
+  source $bashtoolspath
 }
 
 # bash functions below
