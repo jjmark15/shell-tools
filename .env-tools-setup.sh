@@ -8,9 +8,8 @@ if echo $SHELL | grep -q 'zsh'; then
 fi
 
 export devdir="$HOME/dev"
-# export devdir="/mnt/c/Users/user/dev"
 
-source "$devdir/bash-tools/bash-tools.sh"
+source "$devdir/shell-tools/shell-tools.sh"
 
 addtopath "$HOME/.local/bin"
 addtopath "$HOME/apps"

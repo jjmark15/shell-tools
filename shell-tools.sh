@@ -16,9 +16,9 @@ alias sl='ls'
 alias ll='ls -lh'
 alias l='ls -lah'
 
-bashtoolsfname="bash-tools.sh"
-envtooldir="${devdir}/bash-tools/"
-bashtoolspath="${envtooldir}${bashtoolsfname}"
+shelltoolsfname="shell-tools.sh"
+envtooldir="${devdir}/shell-tools/"
+shelltoolspath="${envtooldir}${shelltoolsfname}"
 
 LS_COLORS="$LS_COLORS:ow=01;34"
 export LS_COLORS
@@ -32,14 +32,14 @@ update_env_tools() {
   else
     echo "Update failed"
   fi
-  source $bashtoolspath
+  source $shelltoolspath
 }
 
-# bash functions below
-bashedit() {
+# shell functions below
+shelledit() {
   if [ $# -eq 0 ]
     then
-      vim $bashtoolspath && source $bashtoolspath
+      vim $shelltoolspath && source $shelltoolspath
   else
     vim $1 && source $1
   fi
