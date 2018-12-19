@@ -26,14 +26,12 @@ export LS_COLORS
 export PIPENV_VENV_IN_PROJECT="true"
 
 update_env_tools() {
-  # cd $envtooldir
   if git -C $envtooldir pull --rebase --stat origin master
   then
     echo "Updated env tools"
   else
     echo "Update failed"
   fi
-  cd - > /dev/null
   source $bashtoolspath
 }
 
