@@ -107,3 +107,19 @@ deletebranch () {
   git checkout master
   git branch -D $BRANCH
 }
+
+###############################
+# GOLANG
+
+export GOPATH="$HOME/.go"
+addtopath "$GOPATH/bin"
+
+if [ ! -d "$GOPATH/bin" ]; then
+  mkdir -p "$GOPATH/bin"
+fi
+
+if [ ! -d "$GOPATH/src" ]; then
+  mkdir -p "$GOPATH/src"
+fi
+
+###############################
