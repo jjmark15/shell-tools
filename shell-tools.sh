@@ -20,9 +20,6 @@ shelltoolsfname="shell-tools.sh"
 envtooldir="${devdir}/shell-tools/"
 shelltoolspath="${envtooldir}${shelltoolsfname}"
 
-LS_COLORS="$LS_COLORS:ow=01;34"
-export LS_COLORS
-
 export PIPENV_VENV_IN_PROJECT="true"
 
 update_env_tools() {
@@ -53,7 +50,7 @@ addtopath() {
   if [[ ":$PATH:" == *":$1:"* ]]; then
     :
   else
-    export PATH=$PATH:$1
+    export PATH=$1:$PATH
   fi
 }
 
