@@ -20,6 +20,8 @@ shelltoolsfname="shell-tools.sh"
 envtooldir="${devdir}/shell-tools/"
 shelltoolspath="${envtooldir}${shelltoolsfname}"
 
+alias activate_venv='source ./venv/bin/activate'
+
 export PIPENV_VENV_IN_PROJECT="true"
 
 update_env_tools() {
