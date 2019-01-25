@@ -24,9 +24,16 @@ shelltoolsfname="shell-tools.sh"
 envtooldir="${devdir}/shell-tools/"
 shelltoolspath="${envtooldir}${shelltoolsfname}"
 
-alias activate_venv='source ./venv/bin/activate'
-
 export PIPENV_VENV_IN_PROJECT="true"
+
+activate_venv() {
+  if [ -d "./venv" ]; then
+    source ./venv/bin/activate
+  fi
+  if [ -d "./.venv" ]; then
+    source ./.venv/bin/activate
+  fi
+}
 
 update_env_tools() {
   if git -C $envtooldir pull --rebase --stat origin master
