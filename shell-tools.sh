@@ -9,6 +9,7 @@ alias apty='sudo apt install -y'
 alias prettyjson='python -m json.tool'
 alias cls='printf "\033c"'
 alias gitlog='git log --pretty=oneline --abbrev-commit'
+alias gitlistmerged='git branch --merged | grep -v "\*"'
 
 # ls aliases
 alias la='ls -lAh'
