@@ -26,6 +26,10 @@ shelltoolspath="${envtooldir}${shelltoolsfname}"
 
 export PIPENV_VENV_IN_PROJECT="true"
 
+psaux() {
+  ps aux | grep -v grep | egrep "PID|${1}"
+}
+
 activate_venv() {
   if [ -d "./venv" ]; then
     source ./venv/bin/activate
