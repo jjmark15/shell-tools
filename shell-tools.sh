@@ -125,7 +125,7 @@ deletebranch () {
 ###############################
 # GOLANG
 
-export GOPATH="$HOME/go"
+export GOPATH="$HOME/.go"
 
 if [ ! -d "$GOPATH/bin" ]; then
   mkdir -p "$GOPATH/bin"
