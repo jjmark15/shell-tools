@@ -4,7 +4,6 @@ alias cdev='cd ${devdir}'
 alias cdd='cdev'
 alias emptyf='cat /dev/null > '
 alias shredq='shred -uz'
-alias quick_upgrade='sudo apt update && sudo apt -y full-upgrade && sudo apt autoremove -y && sudo snap refresh'
 alias apty='sudo apt install -y'
 alias refshell='exec $SHELL'
 
@@ -25,6 +24,13 @@ envtooldir="${devdir}/shell-tools/"
 shelltoolspath="${envtooldir}${shelltoolsfname}"
 
 export PIPENV_VENV_IN_PROJECT="true"
+
+quick_upgrade() {
+  command -v apt > /dev/null && sudo apt update && sudo apt -y full-upgrade &&\
+    sudo apt autoremove -y
+  command -v snap > /dev/null && sudo snap refresh
+  command -v flatpak > /dev/null && flatpak update
+}
 
 psaux() {
   ps aux | grep -v grep | egrep -E --color=auto "PID|${1}"
