@@ -13,5 +13,8 @@ fi
 export devdir="$HOME/dev"
 
 source "$devdir/shell-tools/shell-tools.sh"
+source "$devdir/shell-tools/git.sh"
+source "$devdir/shell-tools/golang.sh"
+source "$devdir/shell-tools/python.sh"
 
 addtopath "$HOME/apps"
