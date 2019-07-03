@@ -23,6 +23,7 @@ quick_upgrade() {
     sudo apt autoremove -y
   command -v snap > /dev/null && sudo snap refresh
   command -v flatpak > /dev/null && flatpak update -y
+  command -v brew > /dev/null && brew update && brew upgrade -y
 }
 
 psaux() {
