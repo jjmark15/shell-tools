@@ -26,7 +26,7 @@ quick_upgrade() {
     command -v flatpak > /dev/null && flatpak update -y
           # ...
   elif [[ "$OSTYPE" == "darwin"* ]]; then
-    command -v brew > /dev/null && brew update && brew upgrade
+    command -v brew > /dev/null && brew update > /dev/null && brew upgrade
   fi
 }
 
