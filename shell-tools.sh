@@ -19,10 +19,15 @@ alias ll='ls -lh'
 alias l='ls -lah'
 
 quick_upgrade() {
-  command -v apt > /dev/null && sudo apt update && sudo apt -y full-upgrade &&\
-    sudo apt autoremove -y
-  command -v snap > /dev/null && sudo snap refresh
-  command -v flatpak > /dev/null && flatpak update -y
+  if [[ "$OSTYPE" == "linux-gnu" ]]; then
+    command -v apt > /dev/null && sudo apt update && sudo apt -y full-upgrade &&\
+      sudo apt autoremove -y
+    command -v snap > /dev/null && sudo snap refresh
+    command -v flatpak > /dev/null && flatpak update -y
+          # ...
+  elif [[ "$OSTYPE" == "darwin"* ]]; then
+    command -v brew > /dev/null && brew update > /dev/null && brew upgrade
+  fi
 }
 
 psaux() {
