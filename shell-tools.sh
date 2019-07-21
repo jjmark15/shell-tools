@@ -19,7 +19,7 @@ alias ll='ls -lh'
 alias l='ls -lah'
 
 quick_upgrade() {
-  if [[ "$OSTYPE" == "linux-*" ]]; then
+  if [[ "$OSTYPE" == linux-* ]]; then
     command -v apt > /dev/null && sudo apt update && sudo apt -y full-upgrade &&\
       sudo apt autoremove -y
     command -v snap > /dev/null && sudo snap refresh
