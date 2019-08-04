@@ -18,6 +18,10 @@ gitc() {
   fi
 }
 
+mkdirgitkeep() {
+  mkdir $1 && touch "${1}/.gitkeep"
+}
+
 shouldirebase() {
   CHANGED=$(git status --porcelain)
   if [ -n "${CHANGED}" ]; then
