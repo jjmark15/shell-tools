@@ -16,5 +16,6 @@ source "$devdir/shell-tools/shell-tools.sh"
 source "$devdir/shell-tools/git.sh"
 source "$devdir/shell-tools/golang.sh"
 source "$devdir/shell-tools/python.sh"
+source "$devdir/shell-tools/k8.sh"
 
 addtopath "$HOME/apps"
