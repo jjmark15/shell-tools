@@ -1,4 +1,4 @@
-shelltoolsdir="${devdir}/shell-tools/"
+# shelltoolsdir="${devdir}/shell-tools/"
 shelltoolsfname="shell-tools.sh"
 shelltoolspath="${shelltoolsdir}${shelltoolsfname}"
 

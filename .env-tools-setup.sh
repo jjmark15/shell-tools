@@ -11,11 +11,12 @@ if echo $SHELL | grep -q 'zsh'; then
 fi
 
 export devdir="$HOME/dev"
+export shelltoolsdir="${devdir}/shell-tools/"
 
-source "$devdir/shell-tools/shell-tools.sh"
-source "$devdir/shell-tools/git.sh"
-source "$devdir/shell-tools/golang.sh"
-source "$devdir/shell-tools/python.sh"
-source "$devdir/shell-tools/k8.sh"
+source "$shelltoolsdir/shell-tools.sh"
+source "$shelltoolsdir/git.sh"
+source "$shelltoolsdir/golang.sh"
+source "$shelltoolsdir/python.sh"
+source "$shelltoolsdir/k8.sh"
 
 addtopath "$HOME/apps"
