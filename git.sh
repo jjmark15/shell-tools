@@ -36,6 +36,11 @@ shouldirebase() {
   fi
 }
 
+gitsquashsincemaster() {
+  commits_since_master=$(git rev-list --count HEAD ^master)
+  git reset --soft HEAD~${commits_since_master} && git commit --edit -m "$(git log --format=%B --reverse HEAD..HEAD@{1})";
+}
+
 # our handler that returns choices by populating Bash array COMPREPLY
 # (filtered by the currently entered word ($2) via compgen builtin)
 _gitpull_complete() {
