@@ -1,26 +1,9 @@
-shelltoolsdir="${devdir}/shell-tools/"
-shelltoolsfname="shell-tools.sh"
-shelltoolspath="${shelltoolsdir}${shelltoolsfname}"
+shelltoolsdir="$( cd "$( dirname "${BASH_SOURCE:-$0}" )" >/dev/null 2>&1 && pwd )"
 
 source "${shelltoolsdir}/common.sh"
 
 alias gitlog='git log --pretty=oneline --abbrev-commit'
-alias gitlistmerged='git branch --merged | grep -v "\*"'
 alias gitpruneremote='git remote prune origin'
-
-gitc() {
-  CHANGED=$(git status --porcelain)
-  if [ -n "${CHANGED}" ]; then
-    echo 'repo has changes - aborting.';
-  else
-    basebranch=${1:-master}
-    git checkout $basebranch
-  fi
-}
-
-mkdirgitkeep() {
-  mkdir $1 && touch "${1}/.gitkeep"
-}
 
 shouldirebase() {
   CHANGED=$(git status --porcelain)
@@ -50,11 +33,3 @@ _gitpull_complete() {
 
 # we now register our handler to provide completion hints for the "gitpull" command
 complete -F _gitpull_complete shouldirebase
-complete -F _gitpull_complete gitc
-
-# Checkout master and delete the branch you were on previously.
-deletebranch () {
-  BRANCH=$(git branch | sed -nr 's/\*\s(.*)/\1/p')
-  git checkout master
-  git branch -D $BRANCH
-}
