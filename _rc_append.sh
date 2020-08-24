@@ -1,7 +1,7 @@
 source "$shelltoolsdir/git.sh"
 source "$shelltoolsdir/golang.sh"
 source "$shelltoolsdir/python.sh"
-source "$shelltoolsdir/k8.sh"
+source "$shelltoolsdir/k8s.sh"
 source "$shelltoolsdir/zsh.sh"
 source "$shelltoolsdir/nvm.sh"
 source "$shelltoolsdir/android.sh"
