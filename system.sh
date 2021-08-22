@@ -8,6 +8,8 @@ alias sl='ls'
 alias ll='ls -lh'
 alias l='ls'
 
+alias pls=sudo
+
 psaux() {
   ps aux | grep -v grep | egrep -E --color=auto "PID|${1}"
 }
