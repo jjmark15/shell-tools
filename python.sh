@@ -8,3 +8,9 @@ activate_venv() {
     source ./.venv/bin/activate
   fi
 }
+
+pyenv() {
+  eval "$(command pyenv init -)"
+  eval "$(command pyenv virtualenv-init -)"
+  pyenv "$@"
+}
