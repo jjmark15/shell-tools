@@ -17,3 +17,8 @@ psaux() {
 mkcd() {
   mkdir $1 && cd $1
 }
+
+if [ "$(command -v bat)" ]; then
+  unalias -m 'cat'
+  alias cat='bat -pp --theme="Nord"'
+fi
